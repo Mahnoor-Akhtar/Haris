@@ -1,17 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, Heart, ShoppingBag, Menu, X, Moon, Sun, Phone, Mail, ChevronDown, User, UserPlus, Globe, Crown } from 'lucide-react';
+import { Search, Heart, ShoppingBag, Menu, X, Moon, Sun, Phone, Mail, ChevronDown, User, UserPlus, Globe } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '@/assets/logo.jpeg';
 
 const categories = [
-  { to: '/shop?category=Apparel', label: 'Apparel' },
-  { to: '/shop?category=Accessories', label: 'Accessories' },
-  { to: '/shop?category=Footwear', label: 'Footwear' },
-  { to: '/shop?category=Home', label: 'Home & Lifestyle' },
-  { to: '/shop?category=Bags', label: 'Bags & Wallets' },
-  { to: '/shop?category=Jewelry', label: 'Jewelry' },
+  { to: '/shop?category=Football', label: 'FOOTBALL' },
+  { to: '/shop?category=Basketball', label: 'BASKETBALL' },
+  { to: '/shop?category=Volleyball', label: 'VOLLEYBALL' },
+  { to: '/shop?category=Esports', label: 'ESPORTS' },
+  { to: '/shop?category=Tracksuit', label: 'TRACKSUIT' },
+  { to: '/shop?category=Sports%20Equipment', label: 'SPORTS EQUIPMENT' },
+  { to: '/shop?category=T-Shirts', label: 'T-Shirts' },
 ];
 
 const TOP_BAR_H = 36;
@@ -52,10 +53,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/shop', label: 'Shop' },
-    { to: '/about', label: 'About' },
-    { to: '/contact', label: 'Contact' },
+    { to: '/info', label: 'INFO' },
+    { to: '/concept-formalar', label: 'Concept Formalar' },
+    { to: '/campaigns', label: 'Campaigns' },
+    { to: '/blog', label: 'Blog' },
   ];
 
   return (
@@ -71,7 +72,7 @@ const Navbar = () => {
           borderBottom: '1px solid hsl(var(--gold-primary) / 0.15)',
         }}
       >
-        <div className="max-w-[1440px] mx-auto px-6 h-full flex items-center justify-between text-[11px] font-ui">
+        <div className="max-w-[1440px] mx-auto px-6 h-full flex items-center justify-between text-[15px] font-ui">
           {/* Left — Contact */}
           <div className="hidden sm:flex items-center gap-5 text-muted-foreground">
             <a href="tel:+1234567890" className="flex items-center gap-1.5 hover:text-primary transition-colors">
@@ -86,7 +87,7 @@ const Navbar = () => {
 
           {/* Center — Announcement */}
           <div className="flex-1 sm:flex-none text-center">
-            <span className="text-primary font-semibold tracking-[0.2em] uppercase text-[10px]">
+            <span className="text-primary font-semibold tracking-[0.2em] uppercase text-[15px]">
               ✦ Free Shipping on Orders Over $150 ✦
             </span>
           </div>
@@ -131,15 +132,15 @@ const Navbar = () => {
               className="h-9 w-9 rounded-full object-cover ring-1 ring-primary/30 group-hover:ring-primary/60 transition-all"
             />
             <div className="hidden sm:flex flex-col leading-tight">
-              <span className="font-heading text-[15px] tracking-wide text-foreground">KONYA Web</span>
-              <span className="text-[9px] font-ui text-primary tracking-[0.3em] uppercase -mt-0.5">Store</span>
+              <span className="font-heading text-[22px] tracking-wide text-foreground">KONYA Web</span>
+              <span className="text-[18px] font-ui text-primary tracking-[0.3em] uppercase -mt-0.5">Store</span>
             </div>
           </Link>
 
           {/* Search Bar — Desktop */}
           <form onSubmit={handleSearch} className="hidden lg:flex flex-1 max-w-[520px]">
             <div className="flex items-center w-full h-9 rounded-md border border-border bg-input/40 hover:border-primary/30 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20 transition-all overflow-hidden">
-              <select className="bg-transparent text-foreground/80 text-[11px] font-ui h-full px-3 border-r border-border cursor-pointer outline-none appearance-none">
+              <select className="bg-transparent text-foreground/80 text-[18px] font-ui h-full px-3 border-r border-border cursor-pointer outline-none appearance-none">
                 <option>All</option>
                 <option>Apparel</option>
                 <option>Accessories</option>
@@ -151,7 +152,7 @@ const Navbar = () => {
                 placeholder="Search for royal treasures..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 bg-transparent text-foreground text-sm font-body px-3 h-full outline-none placeholder:text-muted-foreground/60"
+                className="flex-1 bg-transparent text-foreground text-[18px] font-body px-3 h-full outline-none placeholder:text-muted-foreground/60"
               />
               <button type="submit" className="h-full px-3.5 bg-primary hover:bg-primary/90 transition-colors flex items-center">
                 <Search size={15} className="text-primary-foreground" />
@@ -163,7 +164,7 @@ const Navbar = () => {
           <div className="flex-1 lg:hidden" />
 
           {/* Right Actions */}
-          <div className="flex items-center gap-0.5 shrink-0">
+          <div className="flex items-center gap-0.5 shrink-0 ml-auto">
 
             {/* Mobile Search */}
             <button
@@ -194,11 +195,11 @@ const Navbar = () => {
 
             {/* Login / Register — Desktop */}
             <div className="hidden md:flex items-center ml-1 pl-2 border-l border-border gap-0.5">
-              <Link to="/login" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[12px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
+              <Link to="/login" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[18px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
                 <User size={15} />
                 <span>Login</span>
               </Link>
-              <Link to="/register" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[12px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
+              <Link to="/register" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[18px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
                 <UserPlus size={15} />
                 <span>Register</span>
               </Link>
@@ -288,10 +289,10 @@ const Navbar = () => {
             <Link
               key={cat.label}
               to={cat.to}
-              className={`h-full flex items-center px-4 text-[11px] font-ui tracking-[0.15em] uppercase whitespace-nowrap transition-colors border-b-2 ${
+              className={`h-full flex items-center px-4 text-[15px] font-ui tracking-[0.15em] uppercase whitespace-nowrap transition-all rounded-md border ${
                 location.search.includes(cat.label)
-                  ? 'text-primary border-primary'
-                  : 'text-foreground/80 border-transparent hover:text-primary hover:border-primary/40'
+                  ? 'text-primary bg-primary/15 border-primary/40'
+                  : 'text-foreground/80 border-transparent hover:text-primary hover:bg-primary/20 hover:border-primary/50'
               }`}
             >
               {cat.label}
@@ -304,31 +305,15 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`h-full flex items-center px-4 text-[11px] font-ui tracking-[0.15em] uppercase whitespace-nowrap transition-colors border-b-2 ${
+              className={`h-full flex items-center px-4 text-[15px] font-ui tracking-[0.15em] uppercase whitespace-nowrap transition-all rounded-md border ${
                 location.pathname === link.to
-                  ? 'text-primary border-primary'
-                  : 'text-foreground/80 border-transparent hover:text-primary hover:border-primary/40'
+                  ? 'text-primary bg-primary/15 border-primary/40'
+                  : 'text-foreground/80 border-transparent hover:text-primary hover:bg-primary/20 hover:border-primary/50'
               }`}
             >
               {link.label}
             </Link>
           ))}
-
-          <span className="w-px h-4 bg-border mx-1" />
-
-          <Link
-            to="/shop?new=true"
-            className="h-full flex items-center gap-1.5 px-4 text-[11px] font-ui tracking-[0.15em] uppercase whitespace-nowrap text-primary border-b-2 border-transparent hover:border-primary/40 transition-colors"
-          >
-            <Crown size={12} />
-            New Arrivals
-          </Link>
-          <Link
-            to="/shop?sale=true"
-            className="h-full flex items-center px-4 text-[11px] font-ui tracking-[0.15em] uppercase whitespace-nowrap text-destructive border-b-2 border-transparent hover:border-destructive/40 transition-colors"
-          >
-            🔥 Sale
-          </Link>
         </div>
 
         {/* Bottom gold accent */}
@@ -372,7 +357,6 @@ const Navbar = () => {
                   <UserPlus size={15} /> Register
                 </Link>
               </div>
-
               {/* Nav links */}
               <div className="flex flex-col mb-5">
                 {navLinks.map((link) => (

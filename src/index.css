@@ -167,7 +167,8 @@
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 3px;
+    height: 3px;
   }
   ::-webkit-scrollbar-track {
     background: hsl(var(--background));
@@ -179,6 +180,7 @@
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--gold-bright));
   }
+  scrollbar-width: thin;
 }
 
 @layer utilities {

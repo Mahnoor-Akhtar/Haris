@@ -7,34 +7,34 @@ import { products, categories } from '@/data/products';
 
 const heroSlides = [
   {
-    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&h=900&fit=crop&q=80',
-    label: 'Royal Sovereign Blazer',
+    image: 'https://images.pexels.com/photos/35162974/pexels-photo-35162974.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    label: 'Apex Matchday Football Shirt',
     tag: 'BESTSELLER',
-    price: '$489',
+    price: '$89',
   },
   {
-    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&h=900&fit=crop&q=80',
-    label: 'Monarch Oxford Shirt',
+    image: 'https://images.pexels.com/photos/32371318/pexels-photo-32371318.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    label: 'Court Elite Basketball Jersey',
     tag: 'CLASSIC',
-    price: '$245',
+    price: '$79',
   },
   {
-    image: 'https://images.unsplash.com/photo-1608063615781-e2ef8c73d114?w=800&h=900&fit=crop&q=80',
-    label: 'Dynasty Cashmere Overcoat',
+    image: 'https://images.pexels.com/photos/32600309/pexels-photo-32600309.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    label: 'Spike Pro Volleyball Shirt',
     tag: 'PREMIUM',
-    price: '$1,890',
+    price: '$74',
   },
   {
-    image: 'https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&h=900&fit=crop&q=80',
-    label: 'Royal Velvet Smoking Jacket',
+    image: 'https://images.pexels.com/photos/18979846/pexels-photo-18979846.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    label: 'Neon Pulse Esports Jersey',
     tag: 'NEW ARRIVAL',
-    price: '$725',
+    price: '$69',
   },
   {
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=900&fit=crop&q=80',
-    label: 'Sovereign Travel Bag',
-    tag: 'LUXURY',
-    price: '$1,450',
+    image: 'https://images.pexels.com/photos/18256095/pexels-photo-18256095.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    label: 'Velocity Training T-Shirt',
+    tag: 'LIMITED',
+    price: '$55',
   },
 ];
 
@@ -112,7 +112,7 @@ const Index = () => {
               </h1>
 
               <p className="font-body text-base md:text-lg text-muted-foreground max-w-lg mb-4">
-                Curating the finest garments, accessories, and lifestyle pieces for the distinguished few who demand excellence.
+                Performance sports shirts built for matchday intensity, training comfort, and everyday style.
               </p>
 
               {/* Current product info */}
@@ -367,7 +367,7 @@ const Index = () => {
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
               <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=500&fit=crop&q=80"
+                src="https://images.pexels.com/photos/35057166/pexels-photo-35057166.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop"
                 alt="KONYA Web Store"
                 className="w-full h-80 object-cover"
               />

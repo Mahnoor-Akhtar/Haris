@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, ShoppingBag, Star, Eye } from 'lucide-react';
+import { ShoppingCart, Star, Eye } from 'lucide-react';
 import { useStore, Product } from '@/store/useStore';
 import { motion } from 'framer-motion';
 
@@ -48,10 +48,9 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
           onClick={(e) => { e.preventDefault(); toggleWishlist(product.id); }}
           className="absolute top-3 right-3 p-2 rounded-full bg-background/60 glass-effect hover:bg-background/80 transition-colors"
         >
-          <Heart
-            size={16}
-            className={isWished ? 'fill-primary text-primary' : 'text-foreground'}
-          />
+          <span className={`font-ui text-[10px] uppercase tracking-wide ${isWished ? 'text-primary' : 'text-foreground'}`}>
+            {isWished ? 'Saved' : 'Save'}
+          </span>
         </button>
 
         {/* 3D Badge */}
@@ -114,7 +113,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
           className="w-full py-2 rounded-md font-ui text-sm font-semibold text-primary-foreground flex items-center justify-center gap-2 transition-all hover:scale-[0.98] active:scale-95"
           style={{ background: 'var(--gradient-button)', boxShadow: 'var(--shadow-btn)' }}
         >
-          <ShoppingBag size={14} /> Add to Cart
+          <ShoppingCart size={14} /> Add to Cart
         </button>
       </div>
     </motion.div>

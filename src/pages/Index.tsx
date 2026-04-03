@@ -1,37 +1,37 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Crown, Shield, Truck, RotateCcw } from 'lucide-react';
+import { ArrowRight, Crown, Shield, Truck, RotateCcw, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductCard from '@/components/ProductCard';
 import { products, categories } from '@/data/products';
 
 const heroSlides = [
   {
-    image: 'https://images.pexels.com/photos/35162974/pexels-photo-35162974.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    image: 'https://th.bing.com/th/id/OIP.Z3xMcuJEW2wg-dMr_t7KJQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
     label: 'Apex Matchday Football Shirt',
     tag: 'BESTSELLER',
     price: '$89',
   },
   {
-    image: 'https://images.pexels.com/photos/32371318/pexels-photo-32371318.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.1PmkQ3B7UGgGGlLVnW3zpQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
     label: 'Court Elite Basketball Jersey',
     tag: 'CLASSIC',
     price: '$79',
   },
   {
-    image: 'https://images.pexels.com/photos/32600309/pexels-photo-32600309.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    image: 'https://tse2.mm.bing.net/th/id/OIP.sKPVO-y96bc6V-P6jfkvWQHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3',
     label: 'Spike Pro Volleyball Shirt',
     tag: 'PREMIUM',
     price: '$74',
   },
   {
-    image: 'https://images.pexels.com/photos/18979846/pexels-photo-18979846.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.1PmkQ3B7UGgGGlLVnW3zpQHaHa?w=564&h=564&rs=1&pid=ImgDetMain&o=7&rm=3',
     label: 'Neon Pulse Esports Jersey',
     tag: 'NEW ARRIVAL',
     price: '$69',
   },
   {
-    image: 'https://images.pexels.com/photos/18256095/pexels-photo-18256095.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop',
+    image: 'https://tse4.mm.bing.net/th/id/OIP.EnPi-uGTFUs3OHx10mYS9wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
     label: 'Velocity Training T-Shirt',
     tag: 'LIMITED',
     price: '$55',
@@ -81,6 +81,63 @@ const Index = () => {
     { icon: Truck, label: 'Free Shipping over $200' },
     { icon: RotateCcw, label: '30-Day Returns' },
     { icon: Crown, label: '100% Authentic' },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Ali Raza',
+      location: 'Lahore',
+      rating: 5,
+      product: 'AeroFlex Sport Shorts',
+      review: 'Shorts ka fabric bohat soft aur stretchable hai. Running aur gym dono ke liye perfect fit mila, bilkul comfortable.',
+      date: '12 Mar 2026',
+      avatar: 'https://i.pravatar.cc/96?img=12',
+    },
+    {
+      name: 'Usman Tariq',
+      location: 'Karachi',
+      rating: 5,
+      product: 'ProDry Training Shorts',
+      review: 'Sweat management outstanding hai. Long training sessions me bhi shorts dry rehte hain aur stitching quality premium feel deti hai.',
+      date: '24 Mar 2026',
+      avatar: 'https://i.pravatar.cc/96?img=15',
+    },
+    {
+      name: 'Hassan Ali',
+      location: 'Islamabad',
+      rating: 4,
+      product: 'Velocity Match Shorts',
+      review: 'Game day pe movement bohat smooth rehti hai. Waist grip acha hai aur pocket design bhi practical hai for everyday use.',
+      date: '02 Apr 2026',
+      avatar: 'https://i.pravatar.cc/96?img=19',
+    },
+    {
+      name: 'Ayesha Khan',
+      location: 'Faisalabad',
+      rating: 5,
+      product: 'SprintLite Women Sport Shorts',
+      review: 'Length aur fitting exactly waise hi hai jaisa chahiye tha. Lightweight material se workout me bohat asani hoti hai.',
+      date: '28 Mar 2026',
+      avatar: 'https://i.pravatar.cc/96?img=32',
+    },
+    {
+      name: 'Bilal Ahmed',
+      location: 'Multan',
+      rating: 4,
+      product: 'CourtMove Basketball Shorts',
+      review: 'Basketball sessions ke liye ye shorts bohat ache hain. Airflow strong hai aur repeated wash ke baad bhi color fade nahi hua.',
+      date: '16 Mar 2026',
+      avatar: 'https://i.pravatar.cc/96?img=41',
+    },
+    {
+      name: 'Zara Noor',
+      location: 'Rawalpindi',
+      rating: 5,
+      product: 'ActiveCore Running Shorts',
+      review: 'Morning run ke liye best purchase. Fabric skin-friendly hai, bounce nahi karta, aur overall look bhi sporty and clean lagta hai.',
+      date: '05 Apr 2026',
+      avatar: 'https://i.pravatar.cc/96?img=47',
+    },
   ];
 
   return (
@@ -274,9 +331,13 @@ const Index = () => {
                 </Link>
               </motion.div>
             ))}
+
           </div>
         </div>
       </section>
+
+      {/* Customer Testimonials */}
+      
 
       {/* New Arrivals */}
       {newArrivals.length > 0 && (

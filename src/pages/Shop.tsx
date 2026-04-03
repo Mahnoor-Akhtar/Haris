@@ -15,7 +15,7 @@ const Shop = () => {
   if (sortBy === 'rating') filtered = [...filtered].sort((a, b) => b.rating - a.rating);
 
   return (
-    <div className="min-h-screen pt-36 lg:pt-40 pb-20">
+    <div className="min-h-screen pt-40 lg:pt-44 pb-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

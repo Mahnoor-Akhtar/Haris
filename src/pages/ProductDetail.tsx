@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Star, Heart, ShoppingBag, Share2, Truck, Shield, RotateCcw, Camera, ChevronDown } from 'lucide-react';
+import { Star, ShoppingCart, Share2, Truck, Shield, RotateCcw, Camera, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '@/store/useStore';
 import { products } from '@/data/products';
@@ -34,7 +34,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
+    <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
         {/* Breadcrumb */}
         <nav className="mb-8 flex items-center gap-2 font-ui text-sm text-muted-foreground">
@@ -246,7 +246,7 @@ const ProductDetail = () => {
                 className="w-full py-4 rounded-lg font-ui font-bold text-primary-foreground flex items-center justify-center gap-2 text-lg"
                 style={{ background: 'var(--gradient-button)', boxShadow: 'var(--shadow-btn)' }}
               >
-                <ShoppingBag size={20} /> Add to Royal Cart
+                <ShoppingCart size={20} /> Add to Royal Cart
               </motion.button>
 
               <div className="grid grid-cols-2 gap-3">
@@ -256,7 +256,6 @@ const ProductDetail = () => {
                     isWished ? 'border-primary bg-primary/10 text-primary' : 'border-border text-foreground hover:border-primary/40'
                   }`}
                 >
-                  <Heart size={16} className={isWished ? 'fill-primary' : ''} />
                   {isWished ? 'Wishlisted' : 'Wishlist'}
                 </button>
                 <button className="py-3 rounded-lg font-ui text-sm font-semibold border border-border text-foreground hover:border-primary/40 flex items-center justify-center gap-2">

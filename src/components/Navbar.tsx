@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, Heart, ShoppingBag, Menu, X, Moon, Sun, Phone, Mail, ChevronDown, User, UserPlus, Globe } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, Moon, Sun, Phone, Mail, ChevronDown, User, UserPlus, Globe } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '@/assets/logo.jpeg';
@@ -16,11 +16,11 @@ const categories = [
 ];
 
 const TOP_BAR_H = 36;
-const MAIN_NAV_H = 56;
+const MAIN_NAV_H = 64;
 const CAT_BAR_H = 40;
 
 const Navbar = () => {
-  const { theme, toggleTheme, cart, setCartOpen, wishlist } = useStore();
+  const { theme, toggleTheme, cart, setCartOpen } = useStore();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -54,9 +54,6 @@ const Navbar = () => {
 
   const navLinks = [
     { to: '/info', label: 'INFO' },
-    { to: '/concept-formalar', label: 'Concept Formalar' },
-    { to: '/campaigns', label: 'Campaigns' },
-    { to: '/blog', label: 'Blog' },
   ];
 
   return (
@@ -111,7 +108,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* ===== MAIN NAVBAR — 56px ===== */}
+      {/* ===== MAIN NAVBAR — 64px ===== */}
       <nav
         className="fixed left-0 right-0 z-50 transition-all duration-400"
         style={{
@@ -122,23 +119,23 @@ const Navbar = () => {
           borderBottom: '1px solid hsl(var(--border))',
         }}
       >
-        <div className="max-w-[1440px] mx-auto px-6 h-full flex items-center gap-6">
+        <div className="max-w-[1440px] mx-auto px-8 lg:px-10 h-full flex items-center gap-8 relative">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
+          <Link to="/" className="flex items-center gap-3 shrink-0 group">
             <img
               src={logo}
               alt="KONYA Web Store"
-              className="h-9 w-9 rounded-full object-cover ring-1 ring-primary/30 group-hover:ring-primary/60 transition-all"
+              className="h-14 w-17 rounded-full object-cover ring-1 ring-primary/30 group-hover:ring-primary/60 transition-all"
             />
             <div className="hidden sm:flex flex-col leading-tight">
-              <span className="font-heading text-[22px] tracking-wide text-foreground">KONYA Web</span>
-              <span className="text-[18px] font-ui text-primary tracking-[0.3em] uppercase -mt-0.5">Store</span>
+              <span className="font-heading text-[24px] tracking-wide text-foreground">KONYA Web</span>
+              <span className="text-[19px] font-ui text-primary tracking-[0.3em] uppercase -mt-0.5">Store</span>
             </div>
           </Link>
 
           {/* Search Bar — Desktop */}
-          <form onSubmit={handleSearch} className="hidden lg:flex flex-1 max-w-[520px]">
+          <form onSubmit={handleSearch} className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-full max-w-[520px]">
             <div className="flex items-center w-full h-9 rounded-md border border-border bg-input/40 hover:border-primary/30 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20 transition-all overflow-hidden">
               <select className="bg-transparent text-foreground/80 text-[18px] font-ui h-full px-3 border-r border-border cursor-pointer outline-none appearance-none">
                 <option>All</option>
@@ -193,34 +190,12 @@ const Navbar = () => {
               </AnimatePresence>
             </button>
 
-            {/* Login / Register — Desktop */}
-            <div className="hidden md:flex items-center ml-1 pl-2 border-l border-border gap-0.5">
-              <Link to="/login" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[18px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
-                <User size={15} />
-                <span>Login</span>
-              </Link>
-              <Link to="/register" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[18px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
-                <UserPlus size={15} />
-                <span>Register</span>
-              </Link>
-            </div>
-
-            {/* Wishlist */}
-            <Link to="/wishlist" className="w-9 h-9 flex items-center justify-center rounded-md hover:bg-secondary transition-colors relative ml-1">
-              <Heart size={18} className="text-foreground" />
-              {wishlist.length > 0 && (
-                <span className="absolute top-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-primary text-primary-foreground text-[9px] flex items-center justify-center font-ui font-bold">
-                  {wishlist.length}
-                </span>
-              )}
-            </Link>
-
             {/* Cart */}
             <button
               onClick={() => setCartOpen(true)}
               className="w-9 h-9 flex items-center justify-center rounded-md hover:bg-secondary transition-colors relative"
             >
-              <ShoppingBag size={18} className="text-foreground" />
+              <ShoppingCart size={18} className="text-foreground" />
               {cartCount > 0 && (
                 <motion.span
                   key={cartCount}
@@ -232,6 +207,18 @@ const Navbar = () => {
                 </motion.span>
               )}
             </button>
+
+            {/* Login / Register — Desktop */}
+            <div className="hidden md:flex items-center ml-2 pl-2 border-l border-border gap-0.5">
+              <Link to="/login" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[18px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
+                <User size={15} />
+                <span>Login</span>
+              </Link>
+              <Link to="/register" className="flex items-center gap-1.5 h-9 px-3 rounded-md text-[18px] font-ui text-foreground hover:text-primary hover:bg-secondary transition-all">
+                <UserPlus size={15} />
+                <span>Register</span>
+              </Link>
+            </div>
 
             {/* Mobile Menu */}
             <button

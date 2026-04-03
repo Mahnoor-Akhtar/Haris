@@ -1,4 +1,4 @@
-import { X, Plus, Minus, ShoppingBag } from 'lucide-react';
+import { X, Plus, Minus, ShoppingCart } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -29,7 +29,7 @@ const CartDrawer = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-border">
               <h2 className="font-heading text-xl text-foreground flex items-center gap-2">
-                <ShoppingBag size={20} className="text-primary" />
+                <ShoppingCart size={20} className="text-primary" />
                 KONYA Cart
               </h2>
               <button onClick={() => setCartOpen(false)} className="p-2 hover:bg-secondary rounded-full">
@@ -41,7 +41,7 @@ const CartDrawer = () => {
             <div className="flex-1 overflow-y-auto p-6 space-y-4">
               {cart.length === 0 ? (
                 <div className="text-center py-16">
-                  <ShoppingBag size={48} className="mx-auto text-muted-foreground mb-4" />
+                  <ShoppingCart size={48} className="mx-auto text-muted-foreground mb-4" />
                   <p className="font-heading text-lg text-foreground">Your cart is empty</p>
                   <p className="font-body text-muted-foreground mt-2">Begin your royal shopping journey</p>
                 </div>
